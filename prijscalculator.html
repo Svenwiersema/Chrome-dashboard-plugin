@@ -1,0 +1,29 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prijscalculator</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/prijscalculator.css"></head><body><main class="price-calculator-page" class="tool-page"><div class="tool-shell price-layout"><header class="tool-header"><div><h1 class="tool-title">Prijscalculator</h1><p class="tool-subtitle">Bereken een verkoopprijs op basis van inkoopprijs en opslag.</p></div><a class="tool-back" href="index.html">← Dashboard</a></header><section class="tool-panel"><div class="form-grid"><div class="form-field"><label for="purchase">Inkoopprijs (€)</label><input id="purchase" type="number" min="0" step="0.01" value="0"></div><div class="form-field"><label for="markup">Opslag (%)</label><input id="markup" type="number" min="0" step="0.1" value="30"></div></div><label class="check-row"><input id="vat" type="checkbox"> 21% btw meenemen</label><div class="price-result"><div class="result-box"><span class="result-label">Verkoopprijs</span><span id="total" class="price-total">€ 0,00</span></div><div id="calculation" class="price-calculation"><div><span>Inkoopprijs</span><strong id="calcPurchase">€ 0,00</strong></div><div><span id="calcMarkupLabel">+ Opslag (30%)</span><strong id="calcMarkup">€ 0,00</strong></div><div><span>Prijs na opslag</span><strong id="calcSubtotal">€ 0,00</strong></div><div id="vatLine" hidden><span>+ 21% btw</span><strong id="calcVat">€ 0,00</strong></div><div class="calculation-total"><span>Verkoopprijs</span><strong id="calcTotal">€ 0,00</strong></div></div><p class="price-note">De opslag wordt boven op de inkoopprijs berekend.</p></div></section></div></main><script src="js/prijscalculator.js"></script>
+<script>
+(function(){
+  function arrangePriceCalculator(){
+    const main=document.querySelector('.price-calculator-page');
+    const layout=main && main.querySelector('.price-layout');
+    if(!layout || layout.dataset.arranged==='1') return;
+    const children=[...layout.children];
+    const result=children.find(el =>
+      /calculation|breakdown|result|som|bereken/i.test(
+        (el.id||'')+' '+(el.className||'')
+      )
+    );
+    if(!result) return;
+    const left=document.createElement('div');
+    left.className='price-input-column';
+    const right=document.createElement('div');
+    right.className='price-receipt-column';
+    children.forEach(el => (el===result ? right : left).appendChild(el));
+    layout.replaceChildren(left,right);
+    layout.dataset.arranged='1';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',arrangePriceCalculator);
+  else arrangePriceCalculator();
+  setTimeout(arrangePriceCalculator,100);
+})();
+</script>
+
+</body></html>

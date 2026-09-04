@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Mijn Dashboard - New Tab",
+  "version": "1.1.0",
+  "description": "Persoonlijk dashboard voor tools en websites als nieuwe tab in Chrome.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {}
+}

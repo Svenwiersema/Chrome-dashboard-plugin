@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#f4f1eb;--panel:#fffdf9;--text:#26364D;--muted:#707987;--border:#ded9d0;--accent:#F28A24;--shadow:0 8px 24px rgba(38,54,77,.08);--input-bg:#fff;--soft:#ece9e3;--soft-hover:#f1eee8;--danger-bg:#f3e7e2;--danger-text:#8b3f28;--modal-bg:rgba(38,54,77,.35)}
+:root[data-theme="dark"]{--bg:#151b24;--panel:#202936;--text:#edf2f7;--muted:#9ca8b6;--border:#364252;--accent:#F28A24;--shadow:0 10px 28px rgba(0,0,0,.28);--input-bg:#171e28;--soft:#303947;--soft-hover:#343e4e;--danger-bg:#402d2a;--danger-text:#ffb3a5;--modal-bg:rgba(0,0,0,.58)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg)}body{min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}
+header{padding:26px 28px 18px}.header-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:38px;height:38px;border:2px solid var(--text);border-radius:10px;display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:6px}.brand-mark span{background:var(--text);border-radius:2px}.brand h1{margin:0;font-size:22px}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}.search input{width:280px;border:1px solid var(--border);background:var(--input-bg);border-radius:11px;padding:11px 13px;color:var(--text);outline:none}.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(242,138,36,.12)}main{max-width:1200px;margin:0 auto;padding:10px 28px 40px}.section{margin-top:24px}.section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}.section-head h2{font-size:16px;margin:0}.count{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}.app-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:150px;padding:17px;border:1px solid var(--border);border-radius:16px;background:var(--panel);box-shadow:var(--shadow);text-decoration:none;color:var(--text);transition:transform .15s ease,box-shadow .15s ease}.app-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,54,77,.12)}.app-icon{width:48px;height:48px;object-fit:contain}.app-name{font-weight:700;margin-top:18px}.app-description{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.35}.favorite{position:absolute;right:10px;top:9px;border:0;background:transparent;color:#a2a8b0;font-size:18px;padding:3px}.favorite.active{color:var(--accent)}.plus-card{align-items:center;justify-content:center;text-align:center;border-style:dashed;box-shadow:none;color:var(--muted)}.plus-card .plus{font-size:30px;line-height:1;margin-bottom:8px;color:var(--accent)}.modal{position:fixed;inset:0;background:var(--modal-bg);display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.hidden,.hidden{display:none}.modal-card{width:min(520px,100%);background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.18)}.modal-card h3{margin:0 0 16px}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.field{display:flex;flex-direction:column;gap:6px;margin:11px 0}.field label{font-size:13px;font-weight:600}.field input,.field textarea{border:1px solid var(--border);border-radius:9px;padding:10px;background:var(--input-bg);color:var(--text)}.field textarea{resize:vertical;min-height:80px}.primary-btn,.secondary-btn{border:0;border-radius:9px;padding:10px 14px;font-weight:700}.primary-btn{background:var(--accent);color:#fff}.secondary-btn{background:var(--soft);color:var(--text)}
+.tool-page{min-height:100vh;padding:28px}.tool-shell{max-width:1180px;margin:0 auto}.tool-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.tool-title{margin:0;font-size:28px;line-height:1.15}.tool-subtitle{margin:6px 0 0;color:var(--muted)}.tool-back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);border:1px solid var(--border);background:var(--panel);padding:9px 13px;border-radius:10px}.tool-panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:20px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.form-field{display:flex;flex-direction:column;gap:6px}.form-field label{font-weight:600;font-size:14px}.form-field input,.form-field select{width:100%;padding:10px 11px;border:1px solid var(--border);border-radius:9px;background:var(--input-bg);color:var(--text)}.form-field input:focus,.form-field select:focus{outline:2px solid rgba(242,138,36,.22);border-color:var(--accent)}
+:root[data-theme="dark"] .brand-mark span{background:var(--text)}
+
+@media(max-width:700px){header{padding:18px}.header-inner{align-items:stretch;flex-direction:column}.search input{width:100%}main{padding:8px 18px 30px}.tool-page{padding:16px}.form-grid{grid-template-columns:1fr}.tool-header{align-items:flex-start;flex-direction:column}}
+
+.brand-mark.custom-brand-logo{display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}.brand-mark.custom-brand-logo img{display:block;width:100%;height:100%;object-fit:contain;border-radius:7px}
+
+/* V6.5-based dashboard enhancements: edit, drag & drop and website submaps */
+.card-actions{
+  position:absolute;
+  top:7px;
+  right:8px;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  z-index:2;
+}
+.card-actions button{
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.card-actions .favorite{
+  position:static;
+  padding:2px;
+}
+.item-menu{
+  border:0;
+  background:transparent;
+  color:#a2a8b0;
+  font-size:21px;
+  line-height:1;
+  padding:1px 4px;
+  border-radius:6px;
+}
+.item-menu:hover{
+  background:var(--soft-hover);
+  color:var(--text);
+}
+.app-card.draggable-card{
+  cursor:grab;
+}
+.app-card.draggable-card:active{
+  cursor:grabbing;
+}
+.app-card.dragging{
+  opacity:.45;
+}
+.app-card.drop-target{
+  outline:2px dashed var(--accent);
+  outline-offset:3px;
+}
+.section-head-actions{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+}
+.section-add-btn{
+  font-size:12px;
+  padding:8px 11px;
+  cursor:pointer;
+}
+.website-group{
+  margin:0 0 22px;
+}
+.website-group-title{
+  margin:0 0 10px;
+  font-size:14px;
+  font-weight:800;
+  color:var(--text);
+  padding-bottom:6px;
+  border-bottom:1px solid var(--border);
+}
+.website-group-grid{
+  margin-bottom:0;
+}
+.website-add-card{
+  margin-top:2px;
+}
+.modal-actions-between{
+  align-items:center;
+  justify-content:space-between;
+}
+.modal-actions-right{
+  display:flex;
+  gap:9px;
+}
+.danger-btn{
+  border:0;
+  border-radius:9px;
+  padding:10px 14px;
+  font-weight:700;
+  background:var(--danger-bg);
+  color:var(--danger-text);
+}
+@media(max-width:700px){
+  .section-head-actions{margin-left:auto}
+}
+
+
+/* Website layout: rows stacked vertically, cards within each row horizontally. */
+#websitesGrid{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+#websitesGrid > .grid,
+#websitesGrid .website-group-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:14px;
+  width:100%;
+}
+#websitesGrid .website-group{
+  width:100%;
+  margin:0;
+}
+#websitesGrid .website-group-title{
+  width:100%;
+}
+#websitesGrid .website-group-grid{
+  margin-bottom:0;
+}
+
+
+/* Prijscalculator — dashboard-matching styling */
+.price-calculator-page{
+  max-width:900px;
+  margin:0 auto;
+}
+.price-calculator-page .calculator-card,
+.price-calculator-page .card,
+.price-calculator-page .panel,
+.price-calculator-page .tool-card{
+  border-radius:16px;
+}
+.price-calculator-page input[type="number"],
+.price-calculator-page input[type="text"]{
+  width:100%;
+  box-sizing:border-box;
+}
+.price-calculator-page .result,
+.price-calculator-page .calculation,
+.price-calculator-page .calculation-box,
+.price-calculator-page .breakdown{
+  margin-top:18px;
+  padding:16px 18px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--panel);
+  color:var(--text);
+}
+.price-calculator-page .calculation-row,
+.price-calculator-page .breakdown-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:8px 0;
+  border-bottom:1px solid var(--border);
+}
+.price-calculator-page .calculation-row:last-child,
+.price-calculator-page .breakdown-row:last-child{
+  border-bottom:0;
+}
+.price-calculator-page .calculation-total{
+  margin-top:8px;
+  padding-top:12px;
+  border-top:2px solid var(--border);
+  font-weight:800;
+  font-size:1.05em;
+}
+.price-calculator-page .formula{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:10px;
+  background:var(--soft-hover);
+  color:var(--text);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.92em;
+}
+.price-calculator-page .primary-btn,
+.price-calculator-page button{
+  border-radius:10px;
+}
+@media(max-width:700px){
+  .price-calculator-page{max-width:none}
+  .price-calculator-page .calculation-row,
+  .price-calculator-page .breakdown-row{
+    flex-direction:column;
+    gap:3px;
+  }
+}
+
+
+/* Prijscalculator refinement */
+.price-calculator-page{
+  max-width:1000px;
+  width:calc(100% - 48px);
+  margin:0 auto;
+}
+.price-calculator-page .result,
+.price-calculator-page .calculation,
+.price-calculator-page .calculation-box,
+.price-calculator-page .breakdown{
+  box-sizing:border-box;
+  width:100%;
+  overflow:visible;
+  padding:22px 24px;
+}
+.price-calculator-page .calculation-row,
+.price-calculator-page .breakdown-row{
+  align-items:center;
+  min-height:34px;
+  padding:10px 0;
+}
+.price-calculator-page .calculation-row > *,
+.price-calculator-page .breakdown-row > *{
+  min-width:0;
+}
+.price-calculator-page .formula{
+  box-sizing:border-box;
+  width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  line-height:1.5;
+  padding:14px 16px;
+}
+.price-calculator-page .calculation-total{
+  font-size:1.15em;
+  padding-top:15px;
+}
+.price-calculator-page input[type="number"],
+.price-calculator-page input[type="text"]{
+  min-height:44px;
+  font-size:1rem;
+  padding:10px 12px;
+}
+.price-calculator-page button{
+  min-height:42px;
+  padding:10px 16px;
+  font-size:.96rem;
+}
+@media(max-width:700px){
+  .price-calculator-page{
+    width:calc(100% - 28px);
+  }
+  .price-calculator-page .result,
+  .price-calculator-page .calculation,
+  .price-calculator-page .calculation-box,
+  .price-calculator-page .breakdown{
+    padding:18px;
+  }
+}
+
+
+/* V6.5.6 — inputs left, receipt-style calculation right */
+.price-calculator-page{
+  max-width:1050px;
+  width:calc(100% - 48px);
+  margin:0 auto;
+}
+.price-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(340px,.82fr);
+  gap:24px;
+  align-items:start;
+}
+.price-input-column,.price-receipt-column{min-width:0}
+.price-receipt-column > *{box-sizing:border-box;width:100%;min-width:0}
+.price-receipt-column .result,
+.price-receipt-column .calculation,
+.price-receipt-column .calculation-box,
+.price-receipt-column .breakdown{
+  box-sizing:border-box;
+  width:100%;
+  overflow:visible;
+  padding:24px 26px;
+  border-radius:14px;
+}
+.price-receipt-column .calculation-row,
+.price-receipt-column .breakdown-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:18px;
+  min-height:34px;
+  padding:10px 0;
+}
+.price-receipt-column .calculation-row > *,
+.price-receipt-column .breakdown-row > *{
+  min-width:0;
+  overflow-wrap:anywhere;
+}
+.price-receipt-column .calculation-total{
+  margin-top:10px;
+  padding-top:16px;
+  font-size:1.16em;
+}
+.price-receipt-column .formula{
+  box-sizing:border-box;
+  width:100%;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  line-height:1.5;
+  padding:14px 16px;
+}
+@media(max-width:800px){
+  .price-calculator-page{width:calc(100% - 28px)}
+  .price-layout{grid-template-columns:1fr}
+  .price-receipt-column{order:2}
+}

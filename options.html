@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mijn Dashboard – Instellingen</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/options.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <main class="options-page">
+    <section class="options-card">
+      <div class="options-brand">
+        <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+        <div><h1>Mijn Dashboard</h1><p>Extensie-instellingen</p></div>
+        <a class="tool-back" href="index.html">← Dashboard</a>
+      </div>
+
+      <div class="options-section logo-settings">
+        <h2>Dashboard logo</h2>
+        <p class="options-help">Kies je eigen logo. Het logo wordt bovenaan het dashboard gebruikt.</p>
+        <div class="logo-controls">
+          <div class="logo-preview" id="logoPreview" aria-label="Voorbeeld van dashboard logo"></div>
+          <div class="logo-actions">
+            <input id="logoInput" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+            <button class="primary-btn" type="button" id="chooseLogo">Logo kiezen</button>
+            <button class="secondary-btn" type="button" id="removeLogo">Standaardlogo</button>
+            <small>PNG, JPG, WEBP of SVG · maximaal 1,5 MB</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="options-section">
+        <h2>Weergave</h2>
+        <p class="options-help">Kies welk thema het dashboard en de ingebouwde tools gebruiken.</p>
+        <label class="theme-option"><input type="radio" name="theme" value="light"><span><strong>Licht</strong><small>De normale lichte weergave.</small></span></label>
+        <label class="theme-option"><input type="radio" name="theme" value="dark"><span><strong>Donker</strong><small>Een donkere weergave voor minder fel licht.</small></span></label>
+        <label class="theme-option"><input type="radio" name="theme" value="system"><span><strong>Systeem</strong><small>Volgt de donkere/licht instelling van Windows of Chrome.</small></span></label>
+      </div>
+
+      <div class="options-status" id="status" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="js/options.js"></script>
+</body>
+</html>
